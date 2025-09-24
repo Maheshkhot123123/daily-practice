@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+// Function to insert at beginning
+Node* insertAtBeginning(Node* head, int value) {
+    Node* newNode = new Node();  // Naya node banao
+    newNode->data = value;       // Data set karo
+    newNode->next = head;        // New node ka next = purana head
+    head = newNode;              // Head ko new node par update karo
+    return head;                 // Head return karo
+}
+
+// Function to print linked list
+void printList(Node* head) {
+    Node* temp = head;
+    while (temp != nullptr) {
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+
+int main() {
+    Node* head = nullptr; // Empty list
+
+    head = insertAtBeginning(head, 30); // List: 30
+    head = insertAtBeginning(head, 20); // List: 20 -> 30
+    head = insertAtBeginning(head, 10); // List: 10 -> 20 -> 30
+
+    p
